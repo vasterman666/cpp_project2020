@@ -6,7 +6,7 @@
 
 using namespace std;
 
-vector<int> GenereteData(int size, int max_value = INT_MAX);
+vector<int> GenerateData(int size, int max_value = INT_MAX);
 using Participant = std::vector<int>(*)(std::vector<int>);
 void Run(string method_name, Participant p, vector<int> data);
 
@@ -24,7 +24,7 @@ int main()
     const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
     for (int n : N)
     {
-        auto data = GenereteData(n);
+        auto data = GenerateData(n);
         RUN(std_sort);
 		//run your method here
     }

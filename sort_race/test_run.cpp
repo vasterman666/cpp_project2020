@@ -20,8 +20,9 @@ void Run(string method_name, Participant p, vector<int> data)
 		<< (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
 }
 
-vector<int> GenereteData(int size, int max_value = INT_MAX)
+vector<int> GenerateData(int size, int max_value = INT_MAX)
 {
+	//generate random data or read data from your file
 	vector<int> data(size);
 	for (int& d : data)
 		d = rand() % max_value;
