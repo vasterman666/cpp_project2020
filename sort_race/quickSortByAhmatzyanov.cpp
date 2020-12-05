@@ -1,21 +1,25 @@
 #include <vector>
 #include <iterator>
-
+#include <iostream>
 using namespace std;
 
-int partition(vector<int>& data, int left, int right) {
-	int middle = (left + right) / 2;
+int partition(vector<int>& data, int bottom, int top) {
+	int left = bottom;
+	int right = top;
+	int middle = data.at((left + right) / 2);
 	while (left <= right) {
-		while (data[left] <= data[middle]) {
+		while (data.at(left) < middle) {
 			left++;
 		}
-		while (data[right] > data[middle]) {
+		while (data.at(right) > middle) {
 			right--;
 		}
 		if (left >= right) {
 			break;
 		}
-		swap(data[left], data[right]);
+		swap(data.at(left), data.at(right));
+		left++;
+		right--;
 	}
 	return right;
 }
