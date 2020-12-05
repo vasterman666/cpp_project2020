@@ -3,6 +3,7 @@
 
 #include <array>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -17,7 +18,7 @@ void Run(string method_name, Participant p, vector<int> data);
 
 //place your method name here
 vector<int> std_sort(vector<int>);
-
+vector<int> binaryheap(vector<int>);
 
 int main()
 {
@@ -26,6 +27,6 @@ int main()
     {
         auto data = GenerateData(n);
         RUN(std_sort);
-		//run your method here
+        RUN(binaryheap);
     }
 }
