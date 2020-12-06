@@ -28,10 +28,7 @@ void merge(vector<int>& data, int first, int last)
 	//возвращение результата в список
 	for (j = first; j <= last; j++) data[j] = *(mas + j - first);
 };
-//рекурсивная процедура сортировки
 	
-
-
 void MergeSort(vector<int>& data, int first, int last)
 {
 	{
@@ -43,7 +40,6 @@ void MergeSort(vector<int>& data, int first, int last)
 		}
 	}
 };
-
 
 vector<int> merge_sort(vector<int> data)
 {
