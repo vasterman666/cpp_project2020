@@ -3,19 +3,19 @@
 
 using namespace std;
 
-vector <int> combSort(std::vector<int> data) // data — название вектора  (передаём по ссылке, чтобы вызов comb(array) менял вектор array)
+vector <int> combSort(std::vector<int> data) // data вЂ” РЅР°Р·РІР°РЅРёРµ РІРµРєС‚РѕСЂР°  (РїРµСЂРµРґР°С‘Рј РїРѕ СЃСЃС‹Р»РєРµ, С‡С‚РѕР±С‹ РІС‹Р·РѕРІ comb(array) РјРµРЅСЏР» РІРµРєС‚РѕСЂ array)
 {
-    double factor = 1.2473309; // фактор уменьшения
-    int step = data.size() - 1; // шаг сортировки
+    double factor = 1.2473309; // С„Р°РєС‚РѕСЂ СѓРјРµРЅСЊС€РµРЅРёСЏ
+    int step = data.size() - 1; // С€Р°Рі СЃРѕСЂС‚РёСЂРѕРІРєРё
 
-    //Последняя итерация цикла, когда step==1 эквивалентна одному проходу сортировки пузырьком
+    //РџРѕСЃР»РµРґРЅСЏСЏ РёС‚РµСЂР°С†РёСЏ С†РёРєР»Р°, РєРѕРіРґР° step==1 СЌРєРІРёРІР°Р»РµРЅС‚РЅР° РѕРґРЅРѕРјСѓ РїСЂРѕС…РѕРґСѓ СЃРѕСЂС‚РёСЂРѕРІРєРё РїСѓР·С‹СЂСЊРєРѕРј
     while (step >= 1)
     {
         for (int i = 0; i + step < data.size(); i++)
         {
-            if (data[i] > data[i + step])
+            if (data.at(i) > data.at(i + step))
             {
-                std::swap(data[i], data[i + step]);
+                std::swap(data.at(i), data.at(i + step));
             }
         }
         step /= factor;
