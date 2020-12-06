@@ -16,6 +16,7 @@ void Run(string method_name, Participant p, vector<int> data);
 }
 
 //place your method name here
+vector<int> merg_sort(vector<int>);
 vector<int> std_sort(vector<int>);
 
 
@@ -26,6 +27,7 @@ int main()
     {
         auto data = GenerateData(n);
         RUN(std_sort);
+		RUN(merg_sort);
 		//run your method here
     }
 }
