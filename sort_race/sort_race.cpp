@@ -8,6 +8,7 @@
 using namespace std;
 
 vector<int> GenerateData(int size, int max_value = INT_MAX);
+vector <int> readData(int size);
 using Participant = std::vector<int>(*)(std::vector<int>);
 void Run(string method_name, Participant p, vector<int> data);
 
@@ -22,10 +23,10 @@ vector <int> quickSort(vector <int>);
 
 int main()
 {
-    const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-    for (int n : N)
+    //const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
+    //for (int n : N)
     {
-        auto data = GenerateData(n);
+        auto data = readData(100);
         RUN(std_sort);
         RUN(quickSort);
     }
