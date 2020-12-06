@@ -7,7 +7,7 @@ using namespace std;
 
 void heap (vector<int>&data, int i, int n) //obrazovali heap
 {
-    int max = i;
+    int max = i;// index ielem = index maxelem while 
     
     while (true)
     {
@@ -44,6 +44,5 @@ vector<int> binaryheap(vector<int> data)
     heapsort(data);
     return data;
 }
-
 
 
