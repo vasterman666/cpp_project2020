@@ -32,8 +32,12 @@ void qSort(vector<T>& data, int left, int right) {
 		qSort(data, separator + 1, right);
 	}
 }
-template <typename T>
-vector<T> quickSort(vector<T> data) {
+
+vector<int> quickSort(vector<int> data) {
 	qSort(data, 0, data.size()-1);
+	return data;
+}
+vector<double> quickSortDouble(vector<double> data) {
+	qSort(data, 0, data.size() - 1);
 	return data;
 }
