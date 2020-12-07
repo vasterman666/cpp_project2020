@@ -31,7 +31,7 @@ void heapsort(vector<int>& data)// sortirovka vectora
 {
     int n = size(data);
     for (int i = n / 2; i >= 0; i--)
-        heap(data, i , data.size());//cucha
+        heap(data, i , data.size());
     for (int i = n - 1; i >= 1; i--)
     {
         swap(data[0], data[i]);
