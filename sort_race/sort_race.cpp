@@ -1,6 +1,5 @@
 ﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-
 #include <array>
 #include <vector>
 #include <string>

@@ -4,41 +4,47 @@
 
 using namespace std;
 
-void MergeSort(vector<int>& data, int first, int last)
+void MergeSort(vector<int>& data, size_t first, size_t last)
 {
-	int left, right, middle, i; //в начале рассмотрим простейшие случаи
+	size_t left, right, middle, i; //в начале рассмотрим простейшие случаи
+	vector<int> vec;
+	size_t a = first + 1;
+
 	if (last - first < 2) // на случай если в векторе 1 или 0 эл.
 		return;
 	if (last - first == 2) //если в векторе 2 эл.
 	{
-		if (data[first] > data[first + 1])
-			swap(data[first], data[first + 1]);
+		if (data[first] > data[a])
+			swap(data[first], data[a]);
 		return;
 	}
 
-	MergeSort(data, first, (first + last) / 2);
-	MergeSort(data, (first + last) / 2 + 1, last);
+	MergeSort(data, first, first + (last - first) / 2);
+	MergeSort(data, first + (last - first) / 2, last);
 
-	vector<int> vec;
-	middle = (first + last) / 2;
 	left = first;
-	right = middle + 1;
+	middle = first + (last - first) / 2;
+	right = middle ;
 
-	for (i = first; i <= last; i++)
+	while (vec.size() < last - first)
 	{
-		if ((left <= middle) && ((right > last) || (data[left] < data[right])))
+		if (left >= middle || (right < last && data[right] <= data[left]))
 		{
-			vec[i] = data[left];
-			left++;
+			vec.push_back(data[right]);
+			++right;
 		}
 		else
 		{
-			vec[i] = data[right];
-			right++;
+			vec.push_back(data[left]);
+			++left;
 		}
 	}
-	for (i = first; i <= last; i++)
-		data[i] = vec[i - first];
+
+	for (i = first; i < last; ++i)
+	{
+		size_t b = i - first;
+		data[i] = vec[b];
+	}
 }
 
 vector<int> merge_sort(vector<int> data)
@@ -48,9 +54,26 @@ vector<int> merge_sort(vector<int> data)
 }
 
 
-
-
 /*
+int main()
+{
+	vector<int> v;
+	for (int i = 0; i < 20; ++i)
+		v.push_back(i);
+	for (size_t i = 0; i < v.size(); ++i)
+		swap(v[i], v[rand() % (v.size() - i) + i]);
+	for (auto i : v)
+		cout << i << " ";
+	cout << endl;
+
+	MergeSort(v, 0, v.size());
+	for (auto i : v)
+		cout << i << " ";
+	cout << endl;
+
+}
+
+
 void merge(vector<int>& data, int first, int last) 
 {
 	int left_it, right_it, middle, j;
