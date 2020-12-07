@@ -6,13 +6,13 @@
 #include <fstream>
 
 using namespace std;
-
-using Participant = std::vector<int>(*)(std::vector<int>);
-
-void Run(string method_name, Participant p, vector<int> data)
+template <typename T>
+using Participant = std::vector<T>(*)(std::vector<T>);
+template <typename T>
+void Run(string method_name, Participant <T> p, vector<T> data)
 {
 	auto start = chrono::system_clock::now();
-	vector<int> res = p(data);
+	vector<T> res = p(data);
 	auto stop = chrono::system_clock::now();
 	auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
 
@@ -37,6 +37,14 @@ vector<int> GenerateData(int size, int max_value = INT_MAX)
 		d = rand() % max_value;
 	return data;
 }
+vector<double> GenerateDoubleData(int size)
+{
+	//generate random data or read data from your file
+	vector<double> data(size);
+	for (double& d : data)
+		d = (rand() % 10000) / 3;
+	return data;
+}
 
 vector<int> readData(int size) {
 	vector<int> data(size);
@@ -53,3 +61,4 @@ vector<int> readData(int size) {
 	fin.close();
 	return data;
 }
+
