@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iterator>
 #include <vector>
 
 using namespace std;
@@ -11,32 +10,32 @@ void MergeSort(vector<int>& data, int first, int last)
 	int a = first + 1;
 	int c = last - first;
 
-	if (last - first < 2) // на случай если в векторе 1 или 0 эл.
+	if (c < 2) // на случай если в векторе 1 или 0 эл.
 		return;
-	if (last - first == 2) //если в векторе 2 эл.
+	if (c == 2) //если в векторе 2 эл.
 	{
-		if (data.at(first) > data.at(a))
-			swap(data.at(first), data.at(a));
+		if (data[first] > data[a])
+			swap(data[first], data[a]);
 		return;
 	}
 
-	MergeSort(data, first, first + (last - first) / 2);
-	MergeSort(data, first + (last - first) / 2, last);
+	MergeSort(data, first, first + c / 2);
+	MergeSort(data, first + c / 2, last);
 
 	left = first;
-	middle = first + (last - first) / 2;
+	middle = first + c / 2;
 	right = middle ;
 
 	while (vec.size() < c)
 	{
-		if (left >= middle || (right < last && data.at(right) <= data.at(left)))
+		if (left >= middle || (right < last && data[right] <= data[left]))
 		{
-			vec.push_back(data.at(right));
+			vec.push_back(data[right]);
 			++right;
 		}
 		else
 		{
-			vec.push_back(data.at(left));
+			vec.push_back(data[left]);
 			++left;
 		}
 	}
@@ -44,7 +43,7 @@ void MergeSort(vector<int>& data, int first, int last)
 	for (i = first; i < last; ++i)
 	{
 		int b = i - first;
-		data.at(b) = vec[b];
+		data[b] = vec[b];
 	}
 }
 
@@ -53,6 +52,7 @@ vector<int> merge_sort(vector<int> data)
 	MergeSort(data, 0, data.size() - 1);
 	return data;
 }
+
 
 
 /*
