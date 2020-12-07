@@ -7,6 +7,7 @@
 #include <iostream>
 #include "utils.h"
 
+
 using namespace std;
 
 vector<int> GenerateData(int size, int max_value = INT_MAX);
@@ -32,6 +33,12 @@ vector<double> std_sort_double(vector<double>);
 
 vector <int> quickSort(vector <int>);
 vector <double> quickSortDouble(vector <double>);
+
+//vector<int> combSort(vector<int>);
+//vector<int> heapsort(vector<int>);
+//vector<int> mergeSort(vector<int>);
+//vector<int> radixSort(vector<int>);
+
 
 int main()
 {
