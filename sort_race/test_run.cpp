@@ -50,10 +50,11 @@ vector<int> GenerateData(int size, int max_value = INT_MAX)
 	return data;
 }
 vector<double> GenerateDoubleData(int size)
-{
+{ 
 	vector<double> data(size);
 	for (double& d : data)
-		d = double(rand() % 10000) / 3;
+		d = double (rand() % 10000) / 3;
+
 	return data;
 }
 
@@ -72,3 +73,4 @@ vector<int> readData(int size) {
 	fin.close();
 	return data;
 }
+
