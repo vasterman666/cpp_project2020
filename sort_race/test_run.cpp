@@ -53,7 +53,7 @@ vector<double> GenerateDoubleData(int size)
 { 
 	vector<double> data(size);
 	for (double& d : data)
-		d = (rand() % 10000) / 3;
+		d = double (rand() % 10000) / 3;
 	return data;
 }
 
