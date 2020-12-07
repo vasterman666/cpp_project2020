@@ -4,18 +4,19 @@
 
 using namespace std;
 
-void MergeSort(vector<int>& data, size_t first, size_t last)
+void MergeSort(vector<int>& data, int first, int last)
 {
-	size_t left, right, middle, i; //в начале рассмотрим простейшие случаи
+	int left, right, middle, i; //в начале рассмотрим простейшие случаи
 	vector<int> vec;
-	size_t a = first + 1;
+	int a = first + 1;
+	int c = last - first;
 
 	if (last - first < 2) // на случай если в векторе 1 или 0 эл.
 		return;
 	if (last - first == 2) //если в векторе 2 эл.
 	{
-		if (data[first] > data[a])
-			swap(data[first], data[a]);
+		if (data.at(first) > data.at(a))
+			swap(data.at(first), data.at(a));
 		return;
 	}
 
@@ -26,24 +27,24 @@ void MergeSort(vector<int>& data, size_t first, size_t last)
 	middle = first + (last - first) / 2;
 	right = middle ;
 
-	while (vec.size() < last - first)
+	while (vec.size() < c)
 	{
-		if (left >= middle || (right < last && data[right] <= data[left]))
+		if (left >= middle || (right < last && data.at(right) <= data.at(left)))
 		{
-			vec.push_back(data[right]);
+			vec.push_back(data.at(right));
 			++right;
 		}
 		else
 		{
-			vec.push_back(data[left]);
+			vec.push_back(data.at(left));
 			++left;
 		}
 	}
 
 	for (i = first; i < last; ++i)
 	{
-		size_t b = i - first;
-		data[i] = vec[b];
+		int b = i - first;
+		data.at(b) = vec[b];
 	}
 }
 
