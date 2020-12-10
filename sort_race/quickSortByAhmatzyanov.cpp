@@ -26,8 +26,10 @@ void qSort(vector<T>& data, int left, int right) {
 	int separator;
 	if (left < right) {
 		separator = partition(data, left, right);
-		qSort(data, left, separator);
-		qSort(data, separator + 1, right);
+		if (left != separator)
+			qSort(data, left, separator);
+		if (right != separator + 1)
+			qSort(data, separator + 1, right);
 	}
 }
 
