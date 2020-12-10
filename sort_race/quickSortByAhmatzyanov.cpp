@@ -3,9 +3,7 @@
 #include <iostream>
 using namespace std;
 template <typename T>
-int partition(vector<T>& data, int bottom, int top) {
-	int left = bottom;
-	int right = top;
+int partition(vector<T>& data, int left, int right) {
 	T middle = data.at((left + right) / 2);
 	while (left <= right) {
 		while (data.at(left) < middle) {
