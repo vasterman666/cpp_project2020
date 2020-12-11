@@ -1,5 +1,6 @@
 ﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+// 
+
 #include <array>
 #include <vector>
 #include <string>
@@ -32,6 +33,8 @@ vector<int> std_sort(vector<int>);
 vector<int> merge_sort(vector<int>);
 
 vector<double> std_sort_double(vector<double>);
+
+vector<double> merge_sort_double(vector<double>);
 
 //vector<int> combSort(vector<int>);
 //vector<int> heapsort(vector<int>);
