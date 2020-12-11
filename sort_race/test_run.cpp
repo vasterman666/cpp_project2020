@@ -37,6 +37,7 @@ string getName()
 {
 	string name;
 	cout << "Write text name with .txt: ";
+	cin.get();
 	getline(cin, name);
 	return name;
 }
