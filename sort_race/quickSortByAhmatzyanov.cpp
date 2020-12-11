@@ -1,6 +1,6 @@
 #include <vector>
-#include <iterator>
-#include <iostream>
+//#include <iterator>
+//#include <iostream>
 using namespace std;
 template <typename T>
 int partition(vector<T>& data, int left, int right) {
@@ -15,7 +15,10 @@ int partition(vector<T>& data, int left, int right) {
 		if (left >= right) {
 			break;
 		}
-		swap(data.at(left), data.at(right));
+		T buffer = data.at(left);
+		data.at(left) = data.at(right);
+		data.at(right) = buffer;
+		//swap(data.at(left), data.at(right)); <- медленно 
 		left++;
 		right--;
 	}

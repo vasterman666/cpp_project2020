@@ -66,11 +66,10 @@ int main()
             break;
         }
         case 3: {
-            auto data = readData(100);
+            auto data = readData(getIntValue("Choose element count(max 100): ", 0, 100));
             //place ur method here
             RUN(std_sort);
             RUN(quickSort);
-
         }
     }
 }
