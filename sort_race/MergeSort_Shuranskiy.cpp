@@ -12,7 +12,7 @@ void MergeMatrix(vector<T>& mass, size_t first, size_t last, size_t middle)
 
 
 template <typename T>
-vector <T> MergeSort(vector<T> mass)
+vector <T> MergeSort(vector<T> mass, size_t first, size_t last)
 {
 	return mass;
 }
