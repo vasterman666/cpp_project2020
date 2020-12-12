@@ -15,7 +15,7 @@ template<typename T>
 void binaryInsertionSort(std::vector<T>&, int, int); 
 
 template<typename T>
-int binarySearch(std::vector<T>&, int, int, int); 
+int binarySearch(std::vector<T>&, T, int, int); 
 int getminrun1(int); 
 
 template<typename T>
@@ -57,7 +57,7 @@ void timsort(std::vector<T>& v)
             {
                 for (int i = 0; i < (right - left) / 2; i++)
                 {
-                    double t = v.at(left + i);
+                    T t = v.at(left + i);
                     v.at(left + i) = v.at(right - i - 1);
                     v.at(right - i - 1) = t;
                 }
@@ -185,7 +185,7 @@ void binaryInsertionSort(std::vector<T>& v, int left, int right)
 }
 
 template<typename T>
-int binarySearch(std::vector<T>& v, int ziel, int left, int right)
+int binarySearch(std::vector<T>& v, T ziel, int left, int right)
 {
     int middle = (left + right) / 2;
 
