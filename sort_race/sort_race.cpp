@@ -31,7 +31,7 @@ void RunDouble(string method_name, ParticipantDouble p, vector<double> data);
 vector<int> std_sort(vector<int>);
 vector<int> binaryheap(vector<int>);
 vector<double> std_sort_double(vector<double>);
-
+vector<double> binaryheap_double(vector<double>);
 
 //vector<int> combSort(vector<int>);
 //vector<int> heapsort(vector<int>);
@@ -62,6 +62,7 @@ int main()
                 auto data = GenerateDoubleData(n);
                 //place ur method here
                 RUNDouble(std_sort_double);
+                RUNDouble(binaryheap_double);
             }
             break;
         }
