@@ -36,7 +36,7 @@ void RunDouble(string method_name, ParticipantDouble p, vector<double> data)
 string getName()
 {
 	string name;
-	cout << "Write text name with.txt: ";
+	cout << "Write text name with .txt: ";
 	cin.get();
 	getline(cin, name);
 	return name;
