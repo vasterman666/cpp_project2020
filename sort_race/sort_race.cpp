@@ -1,6 +1,7 @@
 // sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
+
 #include <array>
 #include <vector>
 #include <string>
@@ -29,18 +30,12 @@ void RunDouble(string method_name, ParticipantDouble p, vector<double> data);
 
 //place your method name here
 vector<int> std_sort(vector<int>);
+vector<int> merge_sort(vector<int>);
+vector<double> merge_sort_double(vector<double>);
 vector<int> binaryheap(vector<int>);
 vector<double> std_sort_double(vector<double>);
 vector<double> binaryheap_double(vector<double>);
 vector<int> combSort(vector<int>);
-vector<double> std_sort_double(vector<double>);
-
-
-//vector<int> heapsort(vector<int>);
-//vector<int> mergeSort(vector<int>);
-//vector<int> radixSort(vector<int>);
-
-
 
 int main()
 {
@@ -54,6 +49,7 @@ int main()
                 auto data = GenerateData(n);
                 //place ur method here
                 RUN(std_sort);
+                RUN(merge_sort);
                 RUN(timsortByTaishev);
                 RUN(binaryheap);
                 RUN(combSort);
@@ -75,6 +71,7 @@ int main()
             auto data = readData(100);
             //place ur method here
             RUN(std_sort);
+            RUN(merge_sort);
             RUN(timsortByTaishev);
             RUN(binaryheap);
             RUN(combSort);

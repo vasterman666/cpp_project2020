@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MergSortByBurlin.cpp" />
     <ClCompile Include="binaryheap_bySalikhova.cpp" />
     <ClCompile Include="combSortByIsmailova.cpp" />
     <ClCompile Include="sort_race.cpp" />
