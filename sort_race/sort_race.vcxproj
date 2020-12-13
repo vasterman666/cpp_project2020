@@ -147,8 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="binaryheap_bySalikhova.cpp" />
     <ClCompile Include="combSortByIsmailova.cpp" />
-
     <ClCompile Include="sort_race.cpp" />
     <ClCompile Include="std_sort.cpp" />
     <ClCompile Include="test_run.cpp" />
