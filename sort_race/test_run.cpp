@@ -55,6 +55,7 @@ vector<double> GenerateDoubleData(int size)
 	vector<double> data(size);
 	for (double& d : data)
 		d = double (rand() % 10000) / 3;
+
 	return data;
 }
 
