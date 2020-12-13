@@ -29,20 +29,23 @@ void RunDouble(string method_name, ParticipantDouble p, vector<double> data);
 
 //place your method name here
 vector<int> std_sort(vector<int>);
+vector<int> binaryheap(vector<int>);
+vector<double> std_sort_double(vector<double>);
+vector<double> binaryheap_double(vector<double>);
+vector<int> combSort(vector<int>);
 vector<double> std_sort_double(vector<double>);
 
-vector <int> quickSort(vector <int>);
-vector <double> quickSortDouble(vector <double>);
 
-//vector<int> combSort(vector<int>);
 //vector<int> heapsort(vector<int>);
 //vector<int> mergeSort(vector<int>);
 //vector<int> radixSort(vector<int>);
 
 
+
 int main()
 {
     const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
+
         //выбрать необходимый генератор/чтение из файла
     int i = getIntValue("Choose test type: \n 1)Int Generation \n 2)Double Generation \n 3)Read from file(100 elements): ", 1, 3);
     switch (i) {
@@ -52,6 +55,8 @@ int main()
                 //place ur method here
                 RUN(std_sort);
                 RUN(timsortByTaishev);
+                RUN(binaryheap);
+                RUN(combSort);
             }
 
             break;
@@ -62,6 +67,7 @@ int main()
                 //place ur method here
                 RUNDouble(std_sort_double);
                 RUNDouble(timsortByTaishev);
+                RUNDouble(binaryheap_double);
             }
             break;
         }
@@ -70,6 +76,9 @@ int main()
             //place ur method here
             RUN(std_sort);
             RUN(timsortByTaishev);
+            RUN(binaryheap);
+            RUN(combSort);
         }
+
     }
 }
