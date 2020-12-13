@@ -34,11 +34,6 @@ vector<double> std_sort_double(vector<double>);
 vector <int> quickSort(vector <int>);
 vector <double> quickSortDouble(vector <double>);
 
-//vector<int> combSort(vector<int>);
-//vector<int> heapsort(vector<int>);
-//vector<int> mergeSort(vector<int>);
-//vector<int> radixSort(vector<int>);
-
 
 int main()
 {
@@ -66,7 +61,7 @@ int main()
             break;
         }
         case 3: {
-            auto data = readData(getIntValue("Choose element count(max 100): ", 0, 100));
+            auto data = readData(100);
             //place ur method here
             RUN(std_sort);
             RUN(quickSort);
