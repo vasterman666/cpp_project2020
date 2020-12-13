@@ -14,7 +14,7 @@ int binarySearch(std::vector<T>&, int, int, int);
 int getminrun(int);
 
 template<typename T>
-std::vector<T> timsortByTaishev(std::vector<T> v)
+std::vector<T> tim_sort(std::vector<T> v)
 {
 	timsort(v);
 	return v;

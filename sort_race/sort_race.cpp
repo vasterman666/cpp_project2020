@@ -50,7 +50,7 @@ int main()
                 //place ur method here
                 RUN(std_sort);
                 RUN(merge_sort);
-                RUN(timsortByTaishev);
+                RUN(tim_sort);
                 RUN(binaryheap);
                 RUN(combSort);
             }
@@ -62,7 +62,7 @@ int main()
                 auto data = GenerateDoubleData(n);
                 //place ur method here
                 RUNDouble(std_sort_double);
-                RUNDouble(timsortByTaishev);
+                RUNDouble(tim_sort);
                 RUNDouble(binaryheap_double);
             }
             break;
@@ -72,7 +72,7 @@ int main()
             //place ur method here
             RUN(std_sort);
             RUN(merge_sort);
-            RUN(timsortByTaishev);
+            RUN(tim_sort);
             RUN(binaryheap);
             RUN(combSort);
         }
