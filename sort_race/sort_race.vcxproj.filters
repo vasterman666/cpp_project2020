@@ -24,8 +24,8 @@
     <ClCompile Include="test_run.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-
     <ClCompile Include="binaryheap_bySalikhova.cpp">
+    <ClCompile Include="combSortByIsmailova.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
