@@ -1,4 +1,4 @@
-﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <array>
@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 #include "utils.h"
-
+#include "timsortByTaishev.cpp"
 
 using namespace std;
 
@@ -54,6 +54,7 @@ int main()
                 auto data = GenerateData(n);
                 //place ur method here
                 RUN(std_sort);
+                RUN(timsortByTaishev);
                 RUN(binaryheap);
                 RUN(combSort);
             }
@@ -65,6 +66,7 @@ int main()
                 auto data = GenerateDoubleData(n);
                 //place ur method here
                 RUNDouble(std_sort_double);
+                RUNDouble(timsortByTaishev);
                 RUNDouble(binaryheap_double);
             }
             break;
@@ -73,9 +75,9 @@ int main()
             auto data = readData(100);
             //place ur method here
             RUN(std_sort);
+            RUN(timsortByTaishev);
             RUN(binaryheap);
             RUN(combSort);
-
         }
 
     }
