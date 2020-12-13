@@ -1,6 +1,5 @@
 #include <vector>
-//#include <iterator>
-//#include <iostream>
+
 using namespace std;
 template <typename T>
 int partition(vector<T>& data, int left, int right) {
