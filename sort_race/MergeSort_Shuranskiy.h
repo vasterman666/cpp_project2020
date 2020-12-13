@@ -66,8 +66,8 @@ void MergeSort(vector<T>& mass, size_t first, size_t last)//Функция сортировки
 	MergeMatrix(mass, first, last, middle);
 }
 
-//template <typename T>
-vector <int> MergeSort(vector<int> mass)
+template <typename T>
+vector <T> MergeSort(vector<T> mass)
 {
 	size_t first = 0;
 	size_t last = mass.size() - 1;
