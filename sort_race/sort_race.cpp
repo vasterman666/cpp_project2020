@@ -33,59 +33,66 @@ vector<double> sort_for_integers_only(vector<double> data);
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    cout << "1-Целочисленные массивы\n";
-    cout << "2-Вещественные массивы\n";
-    cout << "3-Наборы данных\n";
-    cout << "0-Выход\n";
-    cout << "Введите номер действия\n";
-    int i;
-    while(true)
+    while (true)
     {
-        cin >> i;
-        if (cin.fail() || i < 0 || i>3)
+        cout << "1-Целочисленные массивы\n";
+        cout << "2-Вещественные массивы\n";
+        cout << "3-Наборы данных\n";
+        cout << "0-Выход\n";
+        cout << "Введите номер действия\n";
+        int i;
+        while (true)
         {
-            cout << "Введённые данные не корректны\n";
-            cin.clear();
-            cin.ignore(32767, '\n');
-        }
-        else
-            break;
+            cin >> i;
+            if (cin.fail() || i < 0 || i>3)
+            {
+                cout << "Введённые данные не корректны\n";
+                cin.clear();
+                cin.ignore(32767, '\n');
+            }
+            else
+                break;
 
-    }
-    switch (i)
-    {
-    case 1:
-    {
-        const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-        for (int n : N)
-        {
-            auto data = GenerateData(n);
-            RUN(std_sort);
-            RUN(MergeSort);
-            //run your method here            
         }
-        break;
-    }
-    case 2:
-    {
-        const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-        for (int n : N)
+        switch (i)
         {
-            auto data = GenerateDataforDouble(n);
-            RUNforDouble(sort_for_integers_only);
-            RUNforDouble(MergeSort);
-            //run your method here
+        case 1:
+        {
+            const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
+            for (int n : N)
+            {
+                auto data = GenerateData(n);
+                RUN(std_sort);
+                RUN(MergeSort);
+                //run your method here            
+            }
+            break;
         }
-        break;
-    }
-    case 3:
-    {
-        break;
-    }
-    default:
-    {
-        break;
-    }
+        case 2:
+        {
+            const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
+            for (int n : N)
+            {
+                auto data = GenerateDataforDouble(n);
+                RUNforDouble(sort_for_integers_only);
+                RUNforDouble(MergeSort);
+                //run your method here
+            }
+            break;
+        }
+        case 3:
+        {
+            break;
+        }
+        case 0:
+        {
+            return 0;
+        }
+        default:
+        {
+            break;
+        }
+        }
     }
     
 }
