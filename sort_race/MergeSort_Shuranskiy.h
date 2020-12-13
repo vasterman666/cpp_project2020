@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 template <typename T>
 void MergeMatrix(vector<T>& mass, size_t first, size_t last, size_t middle)//Функция слияния
 {
@@ -55,14 +54,23 @@ void MergeMatrix(vector<T>& mass, size_t first, size_t last, size_t middle)//Фун
 
 
 template <typename T>
-vector <T> MergeSort(vector<T> mass, size_t first, size_t last)//Функция сортировки
+void MergeSort(vector<T>& mass, size_t first, size_t last)//Функция сортировки
 {
 	if (last <= first)
 	{
-		return mass;
+		return;
 	}
 	size_t middle = first + (last - first) / 2;
 	MergeSort(mass, first, middle);
 	MergeSort(mass, middle + 1, last);
 	MergeMatrix(mass, first, last, middle);
+}
+
+//template <typename T>
+vector <int> MergeSort(vector<int> mass)
+{
+	size_t first = 0;
+	size_t last = mass.size() - 1;
+	MergeSort(mass, first, last);
+	return mass;
 }

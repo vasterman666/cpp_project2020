@@ -27,10 +27,8 @@ int main()
     for (int n : N)
     {
         auto data = GenerateData(n);
-        size_t first = 0;
-        size_t last = data.size()-1;
         RUN(std_sort);
-       
+        RUN(MergeSort);
 		//run your method here
     }
 }
