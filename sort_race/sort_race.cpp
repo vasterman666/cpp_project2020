@@ -46,7 +46,12 @@ int main()
                 auto data = GenerateData(n);
                 //place ur method here
                 RUN(std_sort);
-                RUN(quickSort);
+                RUN(quickSort);                
+                RUN(merge_sort);
+                RUN(tim_sort);
+                RUN(binaryheap);
+                RUN(combSort);
+
             }
 
             break;
@@ -57,6 +62,8 @@ int main()
                 //place ur method here
                 RUNDouble(std_sort_double);
                 RUNDouble(quickSortDouble);
+                RUNDouble(tim_sort);
+                RUNDouble(binaryheap_double);
             }
             break;
         }
@@ -65,6 +72,11 @@ int main()
             //place ur method here
             RUN(std_sort);
             RUN(quickSort);
+            RUN(merge_sort);
+            RUN(tim_sort);
+            RUN(binaryheap);
+            RUN(combSort);
+
         }
     }
 }
