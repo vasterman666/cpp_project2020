@@ -5,12 +5,13 @@
 #include <vector>
 #include <string>
 
+#include"MergeSort_Shuranskiy.h"
+
 using namespace std;
 
 vector<int> GenerateData(int size, int max_value = INT_MAX);
 using Participant = std::vector<int>(*)(std::vector<int>);
 void Run(string method_name, Participant p, vector<int> data);
-
 
 #define RUN(x) {                \
     Run(#x, x, data);           \
@@ -26,7 +27,10 @@ int main()
     for (int n : N)
     {
         auto data = GenerateData(n);
+        size_t first = 0;
+        size_t last = data.size()-1;
         RUN(std_sort);
+       
 		//run your method here
     }
 }
