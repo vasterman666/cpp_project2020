@@ -11,7 +11,7 @@
 using namespace std;
 
 vector<int> GenerateData(int size, int max_value = INT_MAX);
-vector<double> GenerateDataforDouble(int size, int max_value = INT_MAX);
+vector<double> GenerateDataforDouble(int size);
 using Participant = std::vector<int>(*)(std::vector<int>);
 using Participantfordouble = std::vector<double>(*)(std::vector<double>);
 void Run(string method_name, Participant p, vector<int> data);
