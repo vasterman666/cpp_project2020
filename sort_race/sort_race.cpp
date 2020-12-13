@@ -1,13 +1,12 @@
-// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-
 
 #include <array>
 #include <vector>
 #include <string>
 #include <iostream>
 #include "utils.h"
-#include "timsortByTaishev.cpp"
+
 
 using namespace std;
 
@@ -30,17 +29,15 @@ void RunDouble(string method_name, ParticipantDouble p, vector<double> data);
 
 //place your method name here
 vector<int> std_sort(vector<int>);
-vector<int> merge_sort(vector<int>);
-vector<double> merge_sort_double(vector<double>);
-vector<int> binaryheap(vector<int>);
 vector<double> std_sort_double(vector<double>);
-vector<double> binaryheap_double(vector<double>);
-vector<int> combSort(vector<int>);
+
+vector <int> quickSort(vector <int>);
+vector <double> quickSortDouble(vector <double>);
+
 
 int main()
 {
     const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-
         //выбрать необходимый генератор/чтение из файла
     int i = getIntValue("Choose test type: \n 1)Int Generation \n 2)Double Generation \n 3)Read from file(100 elements): ", 1, 3);
     switch (i) {
@@ -49,10 +46,12 @@ int main()
                 auto data = GenerateData(n);
                 //place ur method here
                 RUN(std_sort);
+                RUN(quickSort);                
                 RUN(merge_sort);
                 RUN(tim_sort);
                 RUN(binaryheap);
                 RUN(combSort);
+
             }
 
             break;
@@ -62,6 +61,7 @@ int main()
                 auto data = GenerateDoubleData(n);
                 //place ur method here
                 RUNDouble(std_sort_double);
+                RUNDouble(quickSortDouble);
                 RUNDouble(tim_sort);
                 RUNDouble(binaryheap_double);
             }
@@ -71,11 +71,12 @@ int main()
             auto data = readData(100);
             //place ur method here
             RUN(std_sort);
+            RUN(quickSort);
             RUN(merge_sort);
             RUN(tim_sort);
             RUN(binaryheap);
             RUN(combSort);
-        }
 
+        }
     }
 }
