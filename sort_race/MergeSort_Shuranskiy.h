@@ -12,34 +12,42 @@ void MergeMatrix(vector<T>& mass, size_t first, size_t last, size_t middle)//‘ÛÌ
 		swap(mass[first], mass[last]);
 		return;
 	}
+	vector<T> supportmass; 
+	supportmass.resize(last - first + 1);
 	size_t i = first;
 	size_t j = middle + 1;
-	size_t k = first;
+	size_t k = 0;	
 	while (i <= middle && j <= last)
 	{
 		if (mass[i] > mass[j])
 		{
-			mass[k] = mass[j];
+			supportmass[k] = mass[j];
 			k++;
 			j++;
 		}
 		else
 		{
-			mass[k] = mass[i];
+			supportmass[k] = mass[i];
 			k++;
 			i++;
 		}
 	}
 	while (i <= middle)
 	{
-		mass[k] = mass[i];
+		supportmass[k] = mass[i];
 		k++;
 		i++;
 	}
 	while (j <= last)
 	{
-		mass[k] = mass[j];
+		supportmass[k] = mass[j];
 		k++;
+		j++;
+	}
+	for (auto i = first; i <= last; i++)
+	{
+		int j = 0;
+		mass[i] = supportmass[j];
 		j++;
 	}
 }
