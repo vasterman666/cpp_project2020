@@ -21,8 +21,25 @@
     <ClCompile Include="std_sort.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+<<<<<<< HEAD
+    <ClCompile Include="tm_datasets.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataSets.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Participants.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSetRegister.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+=======
     <ClCompile Include="test_run.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+>>>>>>> parent of 00af3d2... Merge pull request #2 from Arius1/main
   </ItemGroup>
 </Project>
