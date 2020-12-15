@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BitonicSort_Sharnin.h" />
+    <ClInclude Include="HeapSort_Gabrielian.h" />
     <ClInclude Include="MergeSort_Shuranskiy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

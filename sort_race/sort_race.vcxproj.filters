@@ -32,5 +32,8 @@
     <ClInclude Include="BitonicSort_Sharnin.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="HeapSort_Gabrielian.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

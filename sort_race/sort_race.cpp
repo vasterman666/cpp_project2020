@@ -7,6 +7,7 @@
 #include <iostream>
 #include"BitonicSort_Sharnin.h"
 #include"MergeSort_Shuranskiy.h"
+#include"HeapSort_Gabrielian.h"
 
 using namespace std;
 
@@ -66,6 +67,7 @@ int main()
                 auto data = GenerateData(n);
                 RUN(std_sort);
                 RUN(MergeSort);
+                RUN(HeapSort);
                 //run your method here            
             }
             for (int n : N1)
@@ -85,6 +87,7 @@ int main()
                 auto data = GenerateDataforDouble(n);
                 RUNforDouble(sort_for_integers_only);
                 RUNforDouble(MergeSort);
+                RUNforDouble(HeapSort);
                 //run your method here
             }
             for (int n : N1)
@@ -104,6 +107,7 @@ int main()
                 RUN(std_sort);
                 RUN(MergeSort);
                 RUN(Bitonic_Sort);
+                RUN(HeapSort);
             }
             break;
         }
