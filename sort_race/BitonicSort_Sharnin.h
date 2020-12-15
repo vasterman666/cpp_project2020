@@ -3,27 +3,27 @@
 
 using namespace std;
 template <typename T>
-void compAndSwap(vector<T>& mass, size_t i, size_t j, int dir)
+void compAndSwap(vector<T>& mass, size_t i, size_t j, int direction)
 {
-    if (dir == (mass[i] > mass[j]))
+    if (direction == (mass[i] > mass[j]))
         swap(mass[i], mass[j]);
 }
 template <typename T>
-void bitonicMerge(vector<T>& mass, int low, size_t Numb, int dir)
+void bitonicMerge(vector<T>& mass, size_t low, size_t Numb, int direction)
 {
     if (Numb > 1)
     {
-        int k = Numb / 2;
-        for (int i = low; i < low + k; i++)
-            compAndSwap(mass, i, i + k, dir);
-        bitonicMerge(mass, low, k, dir);
-        bitonicMerge(mass, low + k, k, dir);
+        size_t k = Numb / 2;
+        for (size_t i = low; i < low + k; i++)
+            compAndSwap(mass, i, i + k, direction);
+        bitonicMerge(mass, low, k, direction);
+        bitonicMerge(mass, low + k, k, direction);
     }
 }
 
 
 template <typename T>
-void bitonicSort(vector<T>& mass, int low, size_t Numb, int dir)
+void bitonicSort(vector<T>& mass, size_t low, size_t Numb, int direction)
 {
     if (Numb > 1)
     {
@@ -34,7 +34,7 @@ void bitonicSort(vector<T>& mass, int low, size_t Numb, int dir)
         bitonicSort(mass, low + k, k, 0);
         // Будем объединять последовательность в порядке возрастания
         // так как dir = 1.
-        bitonicMerge(mass, low, Numb, dir);
+        bitonicMerge(mass, low, Numb, direction);
     }
 }
 
