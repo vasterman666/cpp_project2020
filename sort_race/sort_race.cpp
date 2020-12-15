@@ -1,31 +1,86 @@
-﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
+
 
 #include <array>
 #include <vector>
+#include <string>
+#include <iostream>
+#include "utils.h"
+#include "timsortByTaishev.cpp"
 
 using namespace std;
 
 vector<int> GenerateData(int size, int max_value = INT_MAX);
-using Participant = std::vector<int>(*)(std::vector<int>);
-void Run(string method_name, Participant p, vector<int> data);
+vector <int> readData(int size);
+vector <double> GenerateDoubleData(int size);
 
+using Participant = std::vector<int>(*)(std::vector<int>);
+using ParticipantDouble = std::vector<double>(*)(std::vector<double>);
+
+void Run(string method_name, Participant p, vector<int> data);
+void RunDouble(string method_name, ParticipantDouble p, vector<double> data);
 
 #define RUN(x) {                \
     Run(#x, x, data);           \
 }
+#define RUNDouble(x) {                \
+    RunDouble(#x, x, data);           \
+}
 
 //place your method name here
 vector<int> std_sort(vector<int>);
-
+vector<int> merge_sort(vector<int>);
+vector<double> merge_sort_double(vector<double>);
+vector<int> binaryheap(vector<int>);
+vector<double> std_sort_double(vector<double>);
+vector<double> binaryheap_double(vector<double>);
+vector<int> combSort(vector<int>);
+vector<int> quickSort(vector<int>);
+vector<double> quickSortDouble(vector<double>);
 
 int main()
 {
     const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-    for (int n : N)
-    {
-        auto data = GenerateData(n);
-        RUN(std_sort);
-		//run your method here
+
+        //выбрать необходимый генератор/чтение из файла
+    int i = getIntValue("Choose test type: \n 1)Int Generation \n 2)Double Generation \n 3)Read from file(100 elements): ", 1, 3);
+    switch (i) {
+        case 1: {
+            for (int n : N) {
+                auto data = GenerateData(n);
+                //place ur method here
+                RUN(std_sort);
+                RUN(quickSort);
+                RUN(merge_sort);
+                RUN(tim_sort);
+                RUN(binaryheap);
+                RUN(combSort);
+            }
+
+            break;
+        }
+        case 2: {
+            for (int n : N) {
+                auto data = GenerateDoubleData(n);
+                //place ur method here
+                RUNDouble(std_sort_double);
+                RUNDouble(quickSortDouble);
+                RUNDouble(tim_sort);
+                RUNDouble(binaryheap_double);
+            }
+            break;
+        }
+        case 3: {
+            auto data = readData(getIntValue("type element count for sort(max 100)", 0 , 100));
+            //place ur method here
+            RUN(std_sort);
+            RUN(quickSort);
+            RUN(merge_sort);
+            RUN(tim_sort);
+            RUN(binaryheap);
+            RUN(combSort);
+        }
+
     }
 }
