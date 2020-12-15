@@ -1,31 +1,55 @@
 ﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include <array>
 #include <vector>
+#include <chrono>
+#include <algorithm>
+#include <string>
+#include <iostream>
+#include "DataSetRegister.h"
+#include "Participants.h"
 
 using namespace std;
-
-vector<int> GenerateData(int size, int max_value = INT_MAX);
-using Participant = std::vector<int>(*)(std::vector<int>);
-void Run(string method_name, Participant p, vector<int> data);
-
 
 #define RUN(x) {                \
     Run(#x, x, data);           \
 }
+template <typename T>
+void Run(string method_name, Participant<T> p, vector<T> data)
+{
+    auto start = chrono::system_clock::now();
+    vector<T> res = p(data);
+    auto stop = chrono::system_clock::now();
+    auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
 
-//place your method name here
-vector<int> std_sort(vector<int>);
-
+    cout << method_name << "\t"
+        << data.size() << "\t"
+        << (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
+}
 
 int main()
 {
-    const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-    for (int n : N)
+    auto intDataSets = GenerateIntDataSets();
+    for (auto& ds: intDataSets)
     {
-        auto data = GenerateData(n);
+        cout << ds.description << endl << endl;
+        auto& data = ds.data;
         RUN(std_sort);
 		//run your method here
+
+
+        cout<< endl << "**************************" << endl << endl;
+    } 
+    
+    auto doubleDataSets = GenerateDoubleDataSets();
+    for (auto& ds: doubleDataSets)
+    {
+        cout << ds.description << endl << endl;
+        auto& data = ds.data;
+        RUN(sort_for_integers_only);
+		//run your method here
+
+
+        cout << endl << "**************************" << endl << endl;
     }
 }
