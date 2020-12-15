@@ -47,7 +47,7 @@ int main()
         while (true)
         {
             cin >> i;
-            if (cin.fail() || i < 0 || i>3)
+            if (cin.fail() || i < 0 || i>4)
             {
                 cout << "Введённые данные не корректны\n";
                 cin.clear();
@@ -117,6 +117,13 @@ int main()
         }
         case 4:
         {
+            cout << "Представлен только худший вариант набора данных так как средний и лучший вариант совпадают и его можно проследить в 1 2 и 3 пункте меню\n";
+            vector<int> data{ 5,5,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,9,9,9,9,9,9,9,9};
+            RUN(std_sort);
+            RUN(MergeSort);
+            RUN(Bitonic_Sort);
+            RUN(HeapSort);
+            RUN(Quick_Sort);
             break;
         }
         case 0:
