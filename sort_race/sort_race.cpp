@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include"BitonicSort_Sharnin.h"
+
 #include"MergeSort_Shuranskiy.h"
 
 using namespace std;
@@ -59,7 +59,6 @@ int main()
         case 1:
         {
             const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-            const array<int, 4> N1 = { 8, 1'024, 8'192, 1'048'576 };
             for (int n : N)
             {
                 auto data = GenerateData(n);
@@ -67,30 +66,17 @@ int main()
                 RUN(MergeSort);
                 //run your method here            
             }
-            for (int n : N1)
-            {
-                auto data = GenerateData(n);
-                RUN(std_sort);
-                RUN(Bitonic_Sort);
-            }
             break;
         }
         case 2:
         {
             const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
-            const array<int, 4> N1 = { 8, 1'024, 8'192, 1'048'576 };
             for (int n : N)
             {
                 auto data = GenerateDataforDouble(n);
                 RUNforDouble(sort_for_integers_only);
                 RUNforDouble(MergeSort);
                 //run your method here
-            }
-            for (int n : N1)
-            {
-                auto data = GenerateDataforDouble(n);
-                RUNforDouble(sort_for_integers_only);
-                RUNforDouble(Bitonic_Sort);
             }
             break;
         }
