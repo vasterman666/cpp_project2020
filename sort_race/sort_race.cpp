@@ -37,7 +37,8 @@ int main()
     {
         cout << "1-Целочисленные массивы\n";
         cout << "2-Вещественные массивы\n";
-        cout << "3-Наборы данных\n";
+        cout << "3-Общая гонка с BitonicSort(т.к. он работает только на 2^n элементах)\n";
+        cout << "4-Наборы данных\n";
         cout << "0-Выход\n";
         cout << "Введите номер действия\n";
         int i;
@@ -95,6 +96,18 @@ int main()
             break;
         }
         case 3:
+        {
+            const array<int, 4> N1 = { 8, 1'024, 8'192, 1'048'576 };
+            for (int n : N1)
+            {
+                auto data = GenerateData(n);
+                RUN(std_sort);
+                RUN(MergeSort);
+                RUN(Bitonic_Sort);
+            }
+            break;
+        }
+        case 4:
         {
             break;
         }
