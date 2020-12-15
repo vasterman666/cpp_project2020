@@ -8,6 +8,7 @@
 #include"BitonicSort_Sharnin.h"
 #include"MergeSort_Shuranskiy.h"
 #include"HeapSort_Gabrielian.h"
+#include"QuickSort_Pashayan.h"
 
 using namespace std;
 
@@ -68,6 +69,7 @@ int main()
                 RUN(std_sort);
                 RUN(MergeSort);
                 RUN(HeapSort);
+                RUN(Quick_Sort);
                 //run your method here            
             }
             for (int n : N1)
@@ -88,6 +90,7 @@ int main()
                 RUNforDouble(sort_for_integers_only);
                 RUNforDouble(MergeSort);
                 RUNforDouble(HeapSort);
+                RUNforDouble(Quick_Sort);
                 //run your method here
             }
             for (int n : N1)
@@ -108,6 +111,7 @@ int main()
                 RUN(MergeSort);
                 RUN(Bitonic_Sort);
                 RUN(HeapSort);
+                RUN(Quick_Sort);
             }
             break;
         }
