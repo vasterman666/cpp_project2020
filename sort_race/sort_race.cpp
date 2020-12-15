@@ -69,7 +69,7 @@ int main()
                 RUN(std_sort);
                 RUN(MergeSort);
                 RUN(HeapSort);
-                RUN(Quick_Sort);
+                RUN(QuickSort_Pashayan);
                 //run your method here            
             }
             for (int n : N1)
@@ -90,7 +90,7 @@ int main()
                 RUNforDouble(sort_for_integers_only);
                 RUNforDouble(MergeSort);
                 RUNforDouble(HeapSort);
-                RUNforDouble(Quick_Sort);
+                RUNforDouble(QuickSort_Pashayan);
                 //run your method here
             }
             for (int n : N1)
@@ -111,7 +111,7 @@ int main()
                 RUN(MergeSort);
                 RUN(Bitonic_Sort);
                 RUN(HeapSort);
-                RUN(Quick_Sort);
+                RUN(QuickSort_Pashayan);
             }
             break;
         }
@@ -123,7 +123,7 @@ int main()
             RUN(MergeSort);
             RUN(Bitonic_Sort);
             RUN(HeapSort);
-            RUN(Quick_Sort);
+            RUN(QuickSort_Pashayan);
             break;
         }
         case 0:

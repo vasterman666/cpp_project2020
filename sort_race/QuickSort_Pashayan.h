@@ -48,7 +48,7 @@ void QuickSort(vector<T>& mass) {
 }
 
 template<typename T>
-vector<T> Quick_Sort(vector<T> mass) {
+vector<T> QuickSort_Pashayan(vector<T> mass) {
     QuickSort(mass);
     return mass;
 }
