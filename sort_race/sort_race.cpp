@@ -1,55 +1,86 @@
-﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
+
+#include <array>
 #include <vector>
-#include <chrono>
-#include <algorithm>
 #include <string>
 #include <iostream>
-#include "DataSetRegister.h"
-#include "Participants.h"
+#include "utils.h"
+#include "timsortByTaishev.cpp"
 
 using namespace std;
+
+vector<int> GenerateData(int size, int max_value = INT_MAX);
+vector <int> readData(int size);
+vector <double> GenerateDoubleData(int size);
+
+using Participant = std::vector<int>(*)(std::vector<int>);
+using ParticipantDouble = std::vector<double>(*)(std::vector<double>);
+
+void Run(string method_name, Participant p, vector<int> data);
+void RunDouble(string method_name, ParticipantDouble p, vector<double> data);
 
 #define RUN(x) {                \
     Run(#x, x, data);           \
 }
-template <typename T>
-void Run(string method_name, Participant<T> p, vector<T> data)
-{
-    auto start = chrono::system_clock::now();
-    vector<T> res = p(data);
-    auto stop = chrono::system_clock::now();
-    auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
-
-    cout << method_name << "\t"
-        << data.size() << "\t"
-        << (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
+#define RUNDouble(x) {                \
+    RunDouble(#x, x, data);           \
 }
+
+//place your method name here
+vector<int> std_sort(vector<int>);
+vector<int> merge_sort(vector<int>);
+vector<double> merge_sort_double(vector<double>);
+vector<int> binaryheap(vector<int>);
+vector<double> std_sort_double(vector<double>);
+vector<double> binaryheap_double(vector<double>);
+vector<int> combSort(vector<int>);
+vector<int> quickSort(vector<int>);
+vector<double> quickSortDouble(vector<double>);
 
 int main()
 {
-    auto intDataSets = GenerateIntDataSets();
-    for (auto& ds: intDataSets)
-    {
-        cout << ds.description << endl << endl;
-        auto& data = ds.data;
-        RUN(std_sort);
-		//run your method here
+    const array<int, 4> N = { 10, 1'000, 10'000, 1'000'000 };
 
+        //выбрать необходимый генератор/чтение из файла
+    int i = getIntValue("Choose test type: \n 1)Int Generation \n 2)Double Generation \n 3)Read from file(100 elements): ", 1, 3);
+    switch (i) {
+        case 1: {
+            for (int n : N) {
+                auto data = GenerateData(n);
+                //place ur method here
+                RUN(std_sort);
+                RUN(quickSort);
+                RUN(merge_sort);
+                RUN(tim_sort);
+                RUN(binaryheap);
+                RUN(combSort);
+            }
 
-        cout<< endl << "**************************" << endl << endl;
-    } 
-    
-    auto doubleDataSets = GenerateDoubleDataSets();
-    for (auto& ds: doubleDataSets)
-    {
-        cout << ds.description << endl << endl;
-        auto& data = ds.data;
-        RUN(sort_for_integers_only);
-		//run your method here
+            break;
+        }
+        case 2: {
+            for (int n : N) {
+                auto data = GenerateDoubleData(n);
+                //place ur method here
+                RUNDouble(std_sort_double);
+                RUNDouble(quickSortDouble);
+                RUNDouble(tim_sort);
+                RUNDouble(binaryheap_double);
+            }
+            break;
+        }
+        case 3: {
+            auto data = readData(getIntValue("type element count for sort(max 100)", 0 , 100));
+            //place ur method here
+            RUN(std_sort);
+            RUN(quickSort);
+            RUN(merge_sort);
+            RUN(tim_sort);
+            RUN(binaryheap);
+            RUN(combSort);
+        }
 
-
-        cout << endl << "**************************" << endl << endl;
     }
 }

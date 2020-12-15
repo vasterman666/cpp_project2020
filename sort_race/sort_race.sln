@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sort_race", "sort_race.vcxproj", "{ABA3C79A-6330-469F-94EB-C9B9FA7DEE0B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A82F290F-B879-45CD-B1DA-8530D98B090F}"
+	ProjectSection(SolutionItems) = preProject
+		timsortByTaishev.cpp = timsortByTaishev.cpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
