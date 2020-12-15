@@ -8,9 +8,8 @@ vector<int> std_sort(vector<int> data)
 	sort(data.begin(), data.end());
 	return data;
 }
-
-vector<double> std_sort_double(vector<double> data)
+vector<double> sort_for_integers_only(vector<double> data)
 {
-	sort(data.begin(), data.end());
+	//return unsorted vector if data doesn't match your method
 	return data;
 }
