@@ -147,16 +147,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MergSortByBurlin.cpp" />
-    <ClCompile Include="binaryheap_bySalikhova.cpp" />
-    <ClCompile Include="combSortByIsmailova.cpp" />
-    <ClCompile Include="quickSortByAhmatzyanov.cpp" />
     <ClCompile Include="sort_race.cpp" />
     <ClCompile Include="std_sort.cpp" />
-    <ClCompile Include="test_run.cpp" />
+    <ClCompile Include="tm_datasets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="utils.h" />
+    <ClInclude Include="DataSetRegister.h" />
+    <ClInclude Include="DataSets.h" />
+    <ClInclude Include="Participants.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
