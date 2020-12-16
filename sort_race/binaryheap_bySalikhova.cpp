@@ -5,7 +5,7 @@
 using namespace std;
 
 template <typename T>
-void heap (vector<T>&data, int i, int n) //obrazovali heap
+void heap_Salikhova (vector<T>&data, int i, int n) //obrazovali heap_Salikhova
 {
     int max = i;// index ielem = index maxelem while 
     
@@ -28,25 +28,25 @@ void heap (vector<T>&data, int i, int n) //obrazovali heap
     }
 }
 template <typename T>
-void heapsort(vector<T>& data)// sortirovka vectora
+void heapsort_Salikhova(vector<T>& data)// sortirovka vectora
 {
     int n = size(data);
     for (int i = n / 2; i >= 0; i--)
-        heap(data, i , data.size());
+        heap_Salikhova(data, i , data.size());
     for (int i = n - 1; i >= 1; i--)
     {
         swap(data[0], data[i]);
-        heap(data, 0, i);
+        heap_Salikhova(data, 0, i);
     }
 }
 
 vector<int> binaryheap_by_Salikhova(vector<int> data)
 {
-    heapsort(data);
+    heapsort_Salikhova(data);
     return data;
 }
 vector<double> binaryheap_by_Salikhova (vector<double> data) {
-    heapsort(data);
+    heapsort_Salikhova(data);
     return data;
 }
 

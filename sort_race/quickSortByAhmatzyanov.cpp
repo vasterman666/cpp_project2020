@@ -2,7 +2,7 @@
 
 using namespace std;
 template <typename T>
-int partition(vector<T>& data, int left, int right) {
+int partition_ahmatzyanov(vector<T>& data, int left, int right) {
 	T middle = data.at((left + right) / 2);
 	while (left <= right) {
 		while (data.at(left) < middle) {
@@ -24,21 +24,21 @@ int partition(vector<T>& data, int left, int right) {
 	return right;
 }
 template <typename T>
-void qSort(vector<T>& data, int left, int right) {
+void qSort_Ahmatzyanov(vector<T>& data, int left, int right) {
 	int separator;
 	if (left < right) {
-		separator = partition(data, left, right);
+		separator = partition_ahmatzyanov(data, left, right);
 		if (left != separator)
-			qSort(data, left, separator);
+			qSort_Ahmatzyanov(data, left, separator);
 		if (right != separator + 1)
-			qSort(data, separator + 1, right);
+			qSort_Ahmatzyanov(data, separator + 1, right);
 	}
 }
 vector<int> quickSort_by_Ahmatzyanov(vector<int> data) {
-	qSort(data, 0, data.size()-1);
+	qSort_Ahmatzyanov(data, 0, data.size()-1);
 	return data;
 }
 vector<double> quickSort_by_Ahmatzyanov(vector<double> data) {
-	qSort(data, 0, data.size() - 1);
+	qSort_Ahmatzyanov(data, 0, data.size() - 1);
 	return data;
 }

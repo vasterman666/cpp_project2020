@@ -4,7 +4,7 @@
 using namespace std;
 //
 //template <typename T>
-//void MergeSort(vector<T>& data, size_t first, size_t last)
+//void MergeSort_Burlin(vector<T>& data, size_t first, size_t last)
 //{
 //	// в начале рассмотрим проSстейшие случаи
 //	if (last - first < 2) //если в векторе 1 или 0 эл. (уже отсортирован)
@@ -17,8 +17,8 @@ using namespace std;
 //		return;
 //	}
 //
-//	MergeSort(data, first, first + (last - first) / 2);
-//	MergeSort(data, first + (last - first) / 2, last);
+//	MergeSort_Burlin(data, first, first + (last - first) / 2);
+//	MergeSort_Burlin(data, first + (last - first) / 2, last);
 //
 //	vector<int> v;
 //	T left = first;
@@ -48,14 +48,14 @@ using namespace std;
 
 //vector<int> merge_sort(vector<int> data)
 //{
-//	MergeSort(data, 0, data.size() - 1);
+//	MergeSort_Burlin(data, 0, data.size() - 1);
 //	return data;
 //}
 
 /*
 vector<double> merge_sort_double(vector<double> data)
 {
-	MergeSort(data, 0, data.size() - 1);
+	MergeSort_Burlin(data, 0, data.size() - 1);
 	return data;
 }
 */
@@ -72,7 +72,7 @@ vector<double> merge_sort_double(vector<double> data)
 //		cout << i << " ";
 //	cout << endl;
 //
-//	MergeSort(v, 0, v.size());
+//	MergeSort_Burlin(v, 0, v.size());
 //	for (auto i : v)
 //		cout << i << " ";
 //	cout << endl;
@@ -81,7 +81,7 @@ vector<double> merge_sort_double(vector<double> data)
 
 
 template <typename T>
-void merge(vector<T>& data, int first, int last) 
+void merge_Burlin(vector<T>& data, int first, int last) 
 {
 	int left_it, right_it, middle, j;
 	int *mas; //объявление указательного инта
@@ -109,14 +109,14 @@ void merge(vector<T>& data, int first, int last)
 };
 
 template <typename T>
-void MergeSort(vector<T>& data, int first, int last)
+void MergeSort_Burlin(vector<T>& data, int first, int last)
 {
 	{
 		if (first < last)
 		{
-			MergeSort(data, first, (first + last) / 2); //сортировка первой(левой) части
-			MergeSort(data, (first + last) / 2 + 1, last); //сортировка последней(правой) части
-			merge(data, first, last); //слияние двух частей
+			MergeSort_Burlin(data, first, (first + last) / 2); //сортировка первой(левой) части
+			MergeSort_Burlin(data, (first + last) / 2 + 1, last); //сортировка последней(правой) части
+			merge_Burlin(data, first, last); //слияние двух частей
 		}
 	}
 }; 
@@ -124,11 +124,11 @@ void MergeSort(vector<T>& data, int first, int last)
 
 vector<int> merge_sort_by_Burlin(vector<int> data)
 {
-	MergeSort(data, 0,  data.size() - 1);
+	MergeSort_Burlin(data, 0,  data.size() - 1);
 	return data;
 }
 vector<double> merge_sort_by_Burlin(vector<double> data)
 {
-	MergeSort(data, 0, data.size() - 1);
+	MergeSort_Burlin(data, 0, data.size() - 1);
 	return data;
 }
