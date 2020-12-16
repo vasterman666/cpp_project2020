@@ -159,7 +159,6 @@
   <ItemGroup>
     <ClInclude Include="DataSetRegister.h" />
     <ClInclude Include="DataSets.h" />
-    <ClInclude Include="DataSets_by_AhmatzyanovTeam.h" />
     <ClInclude Include="Participants.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
