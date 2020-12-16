@@ -9,5 +9,3 @@ std::vector<double> GenerateDoubleData();
 //datasets by <comandname>
 //place your datasets here 
 //or include your "datasets_by_<comandname>.h" above
-
-
