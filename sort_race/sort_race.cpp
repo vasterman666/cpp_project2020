@@ -30,26 +30,31 @@ void Run(string method_name, Participant<T> p, vector<T> data)
 int main()
 {
     auto intDataSets = GenerateIntDataSets();
-    for (auto& ds: intDataSets)
+    for (auto& ds : intDataSets)
     {
         cout << ds.description << endl << endl;
         auto& data = ds.data;
         RUN(std_sort);
-		//run your method here
+        //run your method here
+        RUN(binaryheap_by_Salikhova);
+        RUN(tim_sort_by_Taishev);
+        RUN(quickSort_by_Ahmatzyanov);
+        RUN(merge_sort_by_Burlin);
+        RUN(combSort_by_Ismailova);
+        cout << endl << "**************************" << endl << endl;
+    }
 
-
-        cout<< endl << "**************************" << endl << endl;
-    } 
-    
     auto doubleDataSets = GenerateDoubleDataSets();
-    for (auto& ds: doubleDataSets)
+    for (auto& ds : doubleDataSets)
     {
         cout << ds.description << endl << endl;
         auto& data = ds.data;
         RUN(sort_for_integers_only);
-		//run your method here
-
-
+        //run your method here
+        RUN(binaryheap_by_Salikhova);
+        RUN(tim_sort_by_Taishev);
+        RUN(quickSort_by_Ahmatzyanov);
+        RUN(merge_sort_by_Burlin);
         cout << endl << "**************************" << endl << endl;
     }
 }
