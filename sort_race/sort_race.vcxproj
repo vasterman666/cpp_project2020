@@ -156,6 +156,12 @@
     <ClInclude Include="DataSets.h" />
     <ClInclude Include="Participants.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BitonicSort_Sharnin.h" />
+    <ClInclude Include="HeapSort_Gabrielian.h" />
+    <ClInclude Include="MergeSort_Shuranskiy.h" />
+    <ClInclude Include="QuickSort_Pashayan.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

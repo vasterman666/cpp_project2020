@@ -33,6 +33,16 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="DataSetRegister.h">
+    <ClInclude Include="MergeSort_Shuranskiy.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BitonicSort_Sharnin.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="HeapSort_Gabrielian.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="QuickSort_Pashayan.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

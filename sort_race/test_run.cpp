@@ -28,3 +28,27 @@ vector<int> GenerateData(int size, int max_value = INT_MAX)
 		d = rand() % max_value;
 	return data;
 }
+
+
+using Participantfordouble = std::vector<double>(*)(std::vector<double>);
+
+void RunforDouble(string method_name, Participantfordouble p, vector<double> data)
+{
+	auto start = chrono::system_clock::now();
+	vector<double> res = p(data);
+	auto stop = chrono::system_clock::now();
+	auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
+
+	cout << method_name << "\t"
+		<< data.size() << "\t"
+		<< (is_sorted(res.begin(), res.end()) ? to_string(time) + "\tmcs" : "failed") << endl;
+}
+
+vector<double> GenerateDataforDouble(int size)
+{
+	//generate random data or read data from your file
+	vector<double> data(size);
+	for (double& d : data)
+		d = rand()/1.5;
+	return data;
+}
