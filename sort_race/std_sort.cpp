@@ -11,5 +11,5 @@ vector<int> std_sort(vector<int> data)
 vector<double> sort_for_integers_only(vector<double> data)
 {
 	//return unsorted vector if data doesn't match your method
-	return data;
+	return { 1,0 };
 }
