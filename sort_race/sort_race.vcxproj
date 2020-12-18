@@ -147,13 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="binaryheap_bySalikhova.cpp" />
-    <ClCompile Include="combSortByIsmailova.cpp" />
-    <ClCompile Include="MergSortByBurlin.cpp" />
-    <ClCompile Include="quickSortByAhmatzyanov.cpp" />
     <ClCompile Include="sort_race.cpp" />
     <ClCompile Include="std_sort.cpp" />
-    <ClCompile Include="timsortByTaishev.cpp" />
     <ClCompile Include="tm_datasets.cpp" />
   </ItemGroup>
   <ItemGroup>

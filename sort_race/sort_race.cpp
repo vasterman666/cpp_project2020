@@ -1,8 +1,7 @@
-// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// sort_race.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <vector>
-
 #include <chrono>
 #include <algorithm>
 #include <string>
@@ -36,12 +35,6 @@ int main()
         cout << ds.description << endl << endl;
         auto& data = ds.data;
         RUN(std_sort);
-        //AhmatzyanovTeam
-        RUN(binaryheap_by_Salikhova);
-        RUN(tim_sort_by_Taishev);
-        RUN(quickSort_by_Ahmatzyanov);
-        RUN(merge_sort_by_Burlin);
-        RUN(combSort_by_Ismailova);
         //run your method here
 
 
@@ -54,14 +47,9 @@ int main()
         cout << ds.description << endl << endl;
         auto& data = ds.data;
         RUN(sort_for_integers_only);
-        //AhmatzyanovTeam
-        RUN(binaryheap_by_Salikhova);
-        RUN(tim_sort_by_Taishev);
-        RUN(quickSort_by_Ahmatzyanov);
-        RUN(merge_sort_by_Burlin);
         //run your method here
-      
-      
+
+
         cout << endl << "**************************" << endl << endl;
     }
 }
