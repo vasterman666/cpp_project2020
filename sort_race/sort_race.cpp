@@ -36,7 +36,7 @@ int main()
         auto& data = ds.data;
         RUN(std_sort);
         //run your method here
-
+        RUN(ShellSort_Kirillov)
 
         cout << endl << "**************************" << endl << endl;
     }
@@ -48,7 +48,7 @@ int main()
         auto& data = ds.data;
         RUN(sort_for_integers_only);
         //run your method here
-
+        RUN(ShellSort_Kirillov);
 
         cout << endl << "**************************" << endl << endl;
     }
