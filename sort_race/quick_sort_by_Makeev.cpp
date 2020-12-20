@@ -25,13 +25,13 @@ void QuickSort(vector<T>& x, int first, int last)
     }
 }
 
-vector<int> QuickSort_Makeev(vector<int> data)
+vector<int> QuickSort_Makeev(vector<int> data) //Функция для int
 {
     QuickSort(data, 0, data.size() - 1);
     return data;
 }
 
-vector<double> QuickSort_Makeev(vector<double> data)
+vector<double> QuickSort_Makeev(vector<double> data) //Функция для Double
 {
     QuickSort(data, 0, data.size() - 1);
     return data;
