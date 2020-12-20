@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="quick_sort_by_Makeev.cpp" />
     <ClCompile Include="ShellSort_Kirillov.cpp" />
     <ClCompile Include="sort_race.cpp" />
     <ClCompile Include="std_sort.cpp" />

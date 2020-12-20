@@ -10,3 +10,5 @@ std::vector<double> sort_for_integers_only(std::vector<double> data);
 //place your method name here
 std::vector<int> ShellSort_Kirillov(std::vector<int> data);
 std::vector<double> ShellSort_Kirillov(std::vector<double> data);
+std::vector<int> QuickSort_Makeev(std::vector<int> data);
+std::vector<double> QuickSort_Makeev(std::vector<double> data);
